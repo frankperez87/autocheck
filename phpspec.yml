@@ -1,0 +1,4 @@
+suites:
+  carcasm_suite:
+    namespace: AutoCheck
+    src_path: src
