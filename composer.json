@@ -1,4 +1,7 @@
 {
+  "name": "frankperez87/autocheck",
+  "description": "This API allows you to connect to the AutoCheck system in order to request the vehicle history report for a given VIN.",
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "AutoCheck\\": "src/AutoCheck"
@@ -6,5 +9,6 @@
   },
   "require-dev": {
     "phpspec/phpspec": "2.1.0"
-  }
+  },
+  "minimum-stability": "dev"
 }
