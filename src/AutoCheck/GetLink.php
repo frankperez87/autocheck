@@ -53,10 +53,29 @@ class GetLink
         curl_setopt($ch, CURLOPT_HEADER, 0);
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
         curl_setopt($ch, CURLOPT_URL, $this->postUrl);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $this->generateUrlEncodedQueryString($data));
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $response = curl_exec($ch);
         curl_close($ch);
         return $response;
+    }
+
+    /**
+     * @param $data
+     * @return string
+     */
+    private function generateUrlEncodedQueryString($data)
+    {
+        $this->guardAgainstInvalidInputForUrl($data);
+        return http_build_query($data);
+    }
+
+    /**
+     * @param $data
+     */
+    private function guardAgainstInvalidInputForUrl($data)
+    {
+        if (!is_array($data))
+            throw new \InvalidArgumentException;
     }
 }
