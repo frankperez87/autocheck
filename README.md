@@ -9,9 +9,16 @@ This API allows you to connect to the AutoCheck system in order to request the v
 
 require 'vendor/autoload.php';
 
+// Set AutoCheck Account Credentials
 $account = new AutoCheck\Account('Customer ID Here', 'Password Here', 'Secondary Customer Id Here');
+
+// Optional: You can change your language for the report, the default is English.
+// $account->setLanguage('ES');
+
+// Instantiate Object
 $AutoCheck = new AutoCheck\GetLink($account);
 
+// Return AutoCheck Report
 echo $AutoCheck->requestLinkForVin('VIN Goes Here');
 ```
 
