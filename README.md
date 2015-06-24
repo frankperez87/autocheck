@@ -1,5 +1,9 @@
 # AutoCheck API
 This API allows you to connect to the AutoCheck system in order to request the vehicle history report for a given VIN. 
+### Installation Instructions
+```
+composer require frankperez87/autocheck
+```
 
 *This is not the official API provided by AutoCheck.*
 
